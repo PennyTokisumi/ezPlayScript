@@ -1,0 +1,22 @@
+{
+  "name": "playscript",
+  "version": "1.2.1",
+  "private": true,
+  "description": "从分镜视频帧提取台本（镜号/角色/台词）的工具",
+  "type": "commonjs",
+  "bin": {
+    "playscript": "src/cli.js"
+  },
+  "scripts": {
+    "setup": "npm ci && npm ci --prefix cep/com.ezplayscript.panel",
+    "build": "node src/cli.js pic -o 台本.docx",
+    "ocr": "node src/cli.js",
+    "test": "node --test",
+    "smoke": "node scripts/smoke-panel.js",
+    "sync": "node scripts/sync-panel-src.js",
+    "sync:check": "node scripts/sync-panel-src.js --check"
+  },
+  "dependencies": {
+    "docx": "^9.0.0"
+  }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>ezPlayScript by Toki33</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="toolbar">
+            <button id="btnCapture" class="primary">打开截图路径</button>
+            <button id="btnExportTxt">导出 txt</button>
+            <button id="btnExportDocx">导出 docx</button>
+            <button id="btnClear" class="ghost">清空</button>
+        </div>
+
+        <div class="options">
+            <label><input type="checkbox" id="optSplit" checked> 拆分多说话人(&amp;)</label>
+            <label><input type="checkbox" id="optMergeShot"> 镜号续行留空</label>
+        </div>
+
+        <div class="colorbar">
+            <span class="outlabel" title="留空=灰度自动（推荐）；填 #RRGGBB 则按该字色抠图">字幕色</span>
+            <div id="colorSwatch" class="swatch-pick"></div>
+            <input type="text" id="colorHex" class="colorhex" value="" placeholder="自动(灰度)" spellcheck="false" maxlength="7">
+        </div>
+
+        <div class="outrow">
+            <label class="outlabel">输出到</label>
+            <input type="text" id="outDir" spellcheck="false">
+            <button id="btnBrowse" class="ghost">浏览…</button>
+        </div>
+
+        <div id="status" class="status"></div>
+
+        <div class="section-title">抓取记录（可编辑 / 每行一帧）</div>
+        <table id="frameTable">
+            <thead>
+                <tr><th>镜号</th><th>角色</th><th>台词</th><th></th></tr>
+            </thead>
+            <tbody id="frameBody"></tbody>
+        </table>
+
+        <div class="section-title">台本预览</div>
+        <textarea id="preview" readonly spellcheck="false"></textarea>
+    </div>
+
+    <script src="js/CSInterface.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

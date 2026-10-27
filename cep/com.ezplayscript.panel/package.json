@@ -1,0 +1,8 @@
+{
+  "name": "ezplayscript-panel",
+  "version": "1.2.1",
+  "private": true,
+  "dependencies": {
+    "docx": "^9.0.0"
+  }
+}

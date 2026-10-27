@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionManifest Version="7.0" ExtensionBundleId="com.ezplayscript.panel" ExtensionBundleVersion="1.2.1"
+    ExtensionBundleName="ezPlayScript by Toki33" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ExtensionList>
+        <Extension Id="com.ezplayscript.panel" Version="1.2.1"/>
+    </ExtensionList>
+    <ExecutionEnvironment>
+        <HostList>
+            <!-- PPRO = Premiere Pro. 2023 = 23.x；范围放宽以兼容后续小版本 -->
+            <Host Name="PPRO" Version="[22.0,99.9]"/>
+        </HostList>
+        <LocaleList>
+            <Locale Code="All"/>
+        </LocaleList>
+        <RequiredRuntimeList>
+            <!-- CSXS 9.0 为最低要求；PR 2023 内置 CEP 11 满足 -->
+            <RequiredRuntime Name="CSXS" Version="9.0"/>
+        </RequiredRuntimeList>
+    </ExecutionEnvironment>
+    <DispatchInfoList>
+        <Extension Id="com.ezplayscript.panel">
+            <DispatchInfo>
+                <Resources>
+                    <MainPath>./index.html</MainPath>
+                    <ScriptPath>./jsx/host.jsx</ScriptPath>
+                    <CEFCommandLine>
+                        <Parameter>--enable-nodejs</Parameter>
+                        <Parameter>--mixed-context</Parameter>
+                    </CEFCommandLine>
+                </Resources>
+                <Lifecycle>
+                    <AutoVisible>true</AutoVisible>
+                </Lifecycle>
+                <UI>
+                    <Type>Panel</Type>
+                    <Menu>ezPlayScript</Menu>
+                    <Geometry>
+                        <Size>
+                            <Height>560</Height>
+                            <Width>380</Width>
+                        </Size>
+                    </Geometry>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+    </DispatchInfoList>
+</ExtensionManifest>
